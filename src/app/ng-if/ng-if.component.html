@@ -1,0 +1,55 @@
+<h1>Structure-Directive</h1>
+
+<!-- Change Color -->
+<h5>Change Button Color</h5>
+<button style="color:red;" (click)="onChangeColorRed()" *ngIf="btn1">Click me</button>
+<button style="color:blue" (click)="onChangeColorBlue()" *ngIf="btn2">Click me</button>
+<hr>
+
+<!-- NgIf -->
+<h5>NgIf</h5>
+<button (click)="showText()">NgIf</button>
+<p *ngIf="show_text" style="color: blue;">Hello Isuzu</p>
+<hr>
+
+<!-- With else block -->
+<h5>With else block</h5>
+<button (click)="showTextElse()">ngIf and else</button>
+<p *ngIf="show_textElse; else nottext" style="color:red;">If Miura</p>
+
+<ng-template #nottext> <!--after click will disable-->
+    <p style="color: aqua;">Else show before if
+    <p>
+</ng-template>
+<hr>
+
+<!-- NgIf in template -->
+<h5>NgIf in template</h5>
+<button (click)="showText_1()">Click</button><br>
+<ng-template [ngIf]="isLoggedIn" [ngIfElse]="loggedOut"> <!--If block-->
+    <div>
+        <p>Welcome back, friend.</p>
+    </div>
+</ng-template>
+
+<ng-template #loggedOut> <!--else block-->
+    <div>
+        <p>Please friend, login.</p>
+    </div>
+</ng-template>
+<hr>
+
+<!--Separate Template-->
+<h5>Separate Template</h5>
+
+<button (click)="Separate_Template()">Separate Blokc</button>
+<div *ngIf="open == true; then if_block; else else_block"></div> <!--no need to use in div-->
+
+<ng-template #if_block>
+    <h5 style="color: aqua;">If Block</h5>
+</ng-template>
+
+<ng-template #else_block>
+    <h5 style="color:red">Else Block</h5>
+</ng-template>
+<hr>

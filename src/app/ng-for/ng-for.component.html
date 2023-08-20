@@ -1,0 +1,65 @@
+<ng-container *ngFor="let item of item_list">
+    <ul>
+        <li>{{item}}</li>
+    </ul>
+</ng-container>
+<hr>
+<h5 style="color:red">with index</h5>
+<ng-container *ngFor="let item of item_list; index as i">
+    <ul>
+        <li>{{i}} {{item}}</li>
+    </ul>
+</ng-container>
+<hr>
+<h5 style="color:red">Check first index</h5>
+<ng-container *ngFor="let item of item_list; first as i">
+    <ul>
+        <!--if check-->
+        <li *ngIf="i == true" style="color: aqua;">{{i}} {{item}}</li>
+
+        <!--just list for seeing is first index true for not -->
+        <li>{{i}} {{item}}</li>
+    </ul>
+</ng-container>
+<hr>
+<h5 style="color:red">Check last index</h5>
+<ng-container *ngFor="let item of item_list; last as i">
+    <ul>
+        <!--if check-->
+        <li *ngIf="i == true" style="color: aqua;">{{i}} {{item}}</li>
+
+        <!--just list for seeing is first index true for not -->
+        <li>{{i}} {{item}}</li>
+    </ul>
+</ng-container>
+<hr>
+<h5 style="color:red">Even number</h5>
+<ng-container *ngFor="let item of item_list; even as i">
+    <ul>
+        <!--true will show color-->
+        <ng-container *ngIf="i == true"> 
+            <li style="color: aqua;">{{i}} {{item}}</li>
+        </ng-container>
+
+        <!--false will not show color-->
+        <ng-container *ngIf="i == false">
+            <li>{{i}} {{item}}</li>
+        </ng-container>
+    </ul>
+</ng-container>
+
+<hr>
+<h5 style="color:red">Odd number</h5>
+<ng-container *ngFor="let item of item_list; odd as i">
+    <ul>
+        <!--true will show color-->
+        <ng-container *ngIf="i == true"> 
+            <li style="color: aqua;">{{i}} {{item}}</li>
+        </ng-container>
+
+        <!--false will not show color-->
+        <ng-container *ngIf="i == false">
+            <li>{{i}} {{item}}</li>
+        </ng-container>
+    </ul>
+</ng-container>
